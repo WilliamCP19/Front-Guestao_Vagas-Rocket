@@ -22,9 +22,13 @@ public class PrimeiraPaginaController {
     }
 
     @PostMapping("/create")
-    public String cadastrarUsuario (String email, Model model) {
-        System.out.println("Email: "+email);
+    public String cadastrarUsuario (Usuario user, Model model) {
+        System.out.println("Email: "+user.email);
+        System.out.println("Senha: "+user.senha);
         model.addAttribute("mensagemController", "Candidato cadastrado");
-        return "PrimeiraPagina";
+
+        return "redirect:/home";
     }
+
+    public record Usuario (String email, String senha) {}
 }
