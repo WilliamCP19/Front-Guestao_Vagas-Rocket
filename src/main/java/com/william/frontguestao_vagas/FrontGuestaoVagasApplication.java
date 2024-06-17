@@ -9,5 +9,4 @@ public class FrontGuestaoVagasApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FrontGuestaoVagasApplication.class, args);
 	}
-
 }
