@@ -27,7 +27,17 @@ public class PrimeiraPaginaController {
         System.out.println("Senha: "+user.senha);
         model.addAttribute("mensagemController", "Candidato cadastrado");
 
-        return "redirect:/home";
+        return "PrimeiraPagina";
+        //Uso redirect para ir para uma rota já existente.
+    }
+
+    @PostMapping("/info")
+    public String infoUSuario (Model model, Usuario user) {
+        System.out.println("Email: "+user.email);
+        System.out.println("Senha: "+user.senha);
+        model.addAttribute("usuario", user);
+
+        return "candidato/info";
     }
 
     public record Usuario (String email, String senha) {}
